@@ -1,0 +1,39 @@
+project:
+  name: skin-cancer-resnet18
+  seed: 42
+
+data:
+  csv_path: ISIC_2019_Test_Input/ISIC_2019_Test_GroundTruth.csv
+  image_dir: ISIC_2019_Test_Input
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  benign_classes: [NV, BKL]
+  malignant_classes: [MEL, BCC, AK, SCC, DF, VASC]
+
+model:
+  architecture: resnet18
+  pretrained: true
+  image_size: 224
+  threshold: 0.5
+
+training:
+  batch_size: 128
+  num_epochs: 15
+  learning_rate: 0.001
+  num_workers: 0
+  early_stop_patience: 5
+
+paths:
+  checkpoint: checkpoints/best_resnet18_binary.pt
+  results_dir: results
+
+headline:
+  metric: roc_auc
+  roc_auc: 0.902613
+  accuracy: 0.786316
+  balanced_accuracy: 0.804804
+  sensitivity: 0.887458
+  specificity: 0.722151
+  ece: 0.136237
+  cpu_latency_ms: 25.416612
