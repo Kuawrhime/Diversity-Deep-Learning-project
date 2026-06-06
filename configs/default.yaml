@@ -3,8 +3,8 @@ project:
   seed: 42
 
 data:
-  csv_path: ISIC_2019_Test_Input/ISIC_2019_Test_GroundTruth.csv
-  image_dir: ISIC_2019_Test_Input
+  csv_path: ISIC_2019_Training_Input/ISIC_2019_Training_GroundTruth.csv
+  image_dir: ISIC_2019_Training_Input
   train_ratio: 0.70
   val_ratio: 0.15
   test_ratio: 0.15
