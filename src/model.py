@@ -19,7 +19,7 @@ def load_model(checkpoint_path, device, pretrained=False):
 
     model = ResNet18Binary(pretrained=pretrained).to(device)
     try:
-        checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=True)
+        checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     except TypeError:
         checkpoint = torch.load(checkpoint_path, map_location=device)
     if isinstance(checkpoint, dict) and "model_state_dict" in checkpoint:

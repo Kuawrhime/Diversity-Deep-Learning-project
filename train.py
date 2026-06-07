@@ -79,14 +79,7 @@ def main():
         if val_auc > best_val_auc:
             best_val_auc = val_auc
             patience_counter = 0
-            torch.save({
-                "epoch": epoch,
-                "model_state_dict": model.state_dict(),
-                "optimizer_state_dict": optimizer.state_dict(),
-                "scheduler_state_dict": scheduler.state_dict(),
-                "best_val_auc": best_val_auc,
-                "patience_counter": patience_counter,
-            }, checkpoint_path)
+            torch.save(model.state_dict(), checkpoint_path)
             print(f"saved {checkpoint_path} with val_auc={val_auc:.4f}")
         else:
             patience_counter += 1
