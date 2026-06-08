@@ -42,6 +42,12 @@ python evaluate.py --config configs/default.yaml --checkpoint checkpoints/best.p
 
 ## Demo
 
+Watch the project demo:
+
+<video src="demo-group-5.mp4" controls width="100%"></video>
+
+[Open the demo video](demo-group-5.mp4)
+
 Run inference on one skin lesion image:
 
 ```bash
